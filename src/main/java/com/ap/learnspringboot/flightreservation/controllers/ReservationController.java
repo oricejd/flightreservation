@@ -19,7 +19,7 @@ public class ReservationController {
 
 	@RequestMapping("showCompleteReservation")
 	public String showCompleteReservation(@RequestParam("flightId") Long flightId, ModelMap modelMap) {
-		Optional<Flight> flight = flightRepsitory.findById(flightId);
+		Flight flight = flightRepsitory.findById(flightId).get();
 		modelMap.addAttribute("flight", flight);
 
 		return "completeReservation";

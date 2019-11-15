@@ -3,12 +3,14 @@ package com.ap.learnspringboot.flightreservation.entities;
 import java.sql.Timestamp;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
 public class Flight extends AbstractEntity{
 	
 	private String flightNumber;
+	@Column(name ="OPERATING_AIRLINES")
 	private String operatingAirlines;
 	private String departureCity;
 	private String arrivalCity;
