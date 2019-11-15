@@ -56,6 +56,12 @@ SELECT * FROM flight;
 
 SELECT * FROM reservation;
 
+insert into flight values(1,'AA1','American Airlines','AUS','NYC',STR_TO_DATE('02-05-2018','%m-%d-%Y'),'2018-02-05 03:14:07');
+insert into flight values(2,'AA2','American Airlines','AUS','NYC',STR_TO_DATE('02-05-2018','%m-%d-%Y'),'2018-02-05 05:14:07');
+
+insert into flight values(3,'AA3','American Airlines','AUS','NYC',STR_TO_DATE('02-05-2018','%m-%d-%Y'),'2018-02-05 06:14:07');
+insert into flight values(4,'AA4','American Airlines','AUS','NYC',STR_TO_DATE('02-05-2018','%m-%d-%Y'),'2018-02-05 07:14:07');
+
 -- DROP TABLE user;
 -- DROP TABLE passenger;
 -- DROP TABLE flight;
