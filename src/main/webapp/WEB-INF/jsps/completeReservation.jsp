@@ -16,19 +16,19 @@
 
 	<form action="completeReservation" method="post">
 		<pre>
-	Passenger details:
+	<h2>Passenger details:</h2>
 	First name:<input type="text" name="passengerFirstName" /> 
 	Last name:<input type="text" name="passengerLastName" />
 	Email:<input type="text" name="passengerEmail" />
 	Phone:<input type="text" name="passengerPhone" />
 	
-	Card details:
+	<h2>Card details:</h2>
 	Name on card:<input type="text" name="nameOnTheCard" />
 	Card Number:<input type="text" name="cardNumber" />
 	Expiration Date:<input type="text" name="expirationDate" />
 	Security Code:<input type="text" name="securityCode" />
 	
-	<input type="hidden" name="flightId" value="${flight.id} }" />
+	<input type="hidden" name="flightId" value="${flight.id}" />
 	<input type="submit" value="confirm" />
 	</pre>
 	</form>

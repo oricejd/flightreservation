@@ -21,7 +21,7 @@ OPERATING_AIRLINES VARCHAR(20) NOT NULL,
 DEPARTURE_CITY VARCHAR(20) NOT NULL,
 ARRIVAL_CITY VARCHAR(20) NOT NULL,
 DATE_OF_DEPARTURE DATE NOT NULL,
-ESTIMATED_DEPARTURE_TIME TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+EESTIMATED_DEPARTURE_TIME TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (ID)
 );
 
@@ -48,6 +48,8 @@ FOREIGN KEY (PASSENGER_ID) REFERENCES passenger(ID) ON DELETE CASCADE,
 FOREIGN KEY (FLIGHT_ID) REFERENCES flight(ID)
 );
 
+
+
 SELECT * FROM user;
 
 SELECT * FROM passenger;
@@ -61,6 +63,9 @@ insert into flight values(2,'AA2','American Airlines','AUS','NYC',STR_TO_DATE('0
 
 insert into flight values(3,'AA3','American Airlines','AUS','NYC',STR_TO_DATE('02-05-2018','%m-%d-%Y'),'2018-02-05 06:14:07');
 insert into flight values(4,'AA4','American Airlines','AUS','NYC',STR_TO_DATE('02-05-2018','%m-%d-%Y'),'2018-02-05 07:14:07');
+
+delete from reservation where id=1;
+delete from passenger where id=1;
 
 -- DROP TABLE user;
 -- DROP TABLE passenger;
