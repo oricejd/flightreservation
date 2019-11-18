@@ -10,6 +10,8 @@ import com.ap.learnspringboot.flightreservation.entities.Reservation;
 import com.ap.learnspringboot.flightreservation.repos.FlightRepository;
 import com.ap.learnspringboot.flightreservation.repos.PassengerRepository;
 import com.ap.learnspringboot.flightreservation.repos.ReservationRepository;
+import com.ap.learnspringboot.flightreservation.util.EmailUtil;
+import com.ap.learnspringboot.flightreservation.util.PDFGenerator;
 
 @Service
 public class ReservationServiceImpl implements ReservationService {
@@ -22,6 +24,12 @@ public class ReservationServiceImpl implements ReservationService {
 	
 	@Autowired
 	ReservationRepository reservationRepository;
+	
+	@Autowired
+	PDFGenerator pdfGenerator;
+	
+	@Autowired
+	EmailUtil emailUtil;
 
 	@Override
 	public Reservation reservationBookFlight(ReservationRequest request) {
@@ -44,6 +52,11 @@ public class ReservationServiceImpl implements ReservationService {
 		reservation.setCheckedIn(false);
 		 
 		Reservation savedReservation = reservationRepository.save(reservation);
+		
+		String filePath = "src/main/resources/reservation" + savedReservation.getId() + ".pdf";
+		pdfGenerator.generateItinerary(reservation, filePath );
+		
+		emailUtil.sendItineraryEmail(passenger.getEmail(), filePath);
 		
 		return savedReservation;
 	}
