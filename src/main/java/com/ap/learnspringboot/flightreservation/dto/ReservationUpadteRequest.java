@@ -4,31 +4,30 @@ public class ReservationUpadteRequest {
 
 	private Long id;
 	private int numberOfBags;
+	private Boolean checkedIn;
 
 	public Long getId() {
 		return id;
-	}
-
-	public Boolean getCheckedIn() {
-		return checkedIn;
-	}
-
-	public int getNumberOfBags() {
-		return numberOfBags;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	public void setCheckedIn(Boolean checkedIn) {
-		this.checkedIn = checkedIn;
+	public int getNumberOfBags() {
+		return numberOfBags;
 	}
 
 	public void setNumberOfBags(int numberOfBags) {
 		this.numberOfBags = numberOfBags;
 	}
 
-	private Boolean checkedIn;
+	public Boolean getCheckedIn() {
+		return checkedIn;
+	}
+
+	public void setCheckedIn(Boolean checkedIn) {
+		this.checkedIn = checkedIn;
+	}
 
 }

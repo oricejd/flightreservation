@@ -67,8 +67,11 @@ insert into flight values(4,'AA4','American Airlines','AUS','NYC',STR_TO_DATE('0
 insert into flight values(5,'VA5','Virgin Airlines','NYC','BOS',STR_TO_DATE('02-07-2018','%m-%d-%Y'),'2018-02-07 01:14:05');
 insert into flight values(6,'VA6','Virgin Airlines','BOS','NYC',STR_TO_DATE('02-09-2018','%m-%d-%Y'),'2018-02-09 09:14:00');
 
-delete from reservation where id=1;
-delete from passenger where id=1;
+insert into flight values(7,'VA7','Virgin Airlines','NYC','BOS',STR_TO_DATE('02-09-2018','%m-%d-%Y'),'2018-02-09 01:34:05');
+insert into flight values(8,'VA8','Virgin Airlines','BOS','NYC',STR_TO_DATE('02-10-2018','%m-%d-%Y'),'2018-02-11 09:24:30');
+
+delete from reservation where id=2;
+delete from passenger where id=2;
 
 -- DROP TABLE user;
 -- DROP TABLE passenger;
