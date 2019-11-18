@@ -64,6 +64,9 @@ insert into flight values(2,'AA2','American Airlines','AUS','NYC',STR_TO_DATE('0
 insert into flight values(3,'AA3','American Airlines','AUS','NYC',STR_TO_DATE('02-05-2018','%m-%d-%Y'),'2018-02-05 06:14:07');
 insert into flight values(4,'AA4','American Airlines','AUS','NYC',STR_TO_DATE('02-05-2018','%m-%d-%Y'),'2018-02-05 07:14:07');
 
+insert into flight values(5,'VA5','Virgin Airlines','NYC','BOS',STR_TO_DATE('02-07-2018','%m-%d-%Y'),'2018-02-07 01:14:05');
+insert into flight values(6,'VA6','Virgin Airlines','BOS','NYC',STR_TO_DATE('02-09-2018','%m-%d-%Y'),'2018-02-09 09:14:00');
+
 delete from reservation where id=1;
 delete from passenger where id=1;
 
