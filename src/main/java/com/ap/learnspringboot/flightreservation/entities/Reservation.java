@@ -1,5 +1,6 @@
 package com.ap.learnspringboot.flightreservation.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
@@ -7,6 +8,7 @@ import javax.persistence.OneToOne;
 public class Reservation extends AbstractEntity{
 	
 	private Boolean checkedIn;
+	@Column(name ="NUMBER_OF_BAGS")
 	private int numberOfBags;
 	@OneToOne
 	private Passenger passenger;
