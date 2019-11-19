@@ -3,6 +3,14 @@ package com.ap.learnspringboot.flightreservation.dto;
 public class ReservationRequest {
 
 	private Long flightId;
+	@Override
+	public String toString() {
+		return "ReservationRequest [flightId=" + flightId + ", passengerFirstName=" + passengerFirstName
+				+ ", passengerLastName=" + passengerLastName + ", passengerEmail=" + passengerEmail
+				+ ", passengerPhone=" + passengerPhone + ", nameOnTheCard=" + nameOnTheCard + ", cardNumber="
+				+ cardNumber + ", expirationDate=" + expirationDate + ", securityCode=" + securityCode + "]";
+	}
+
 	private String passengerFirstName;
 	private String passengerLastName;
 	private String passengerEmail;
