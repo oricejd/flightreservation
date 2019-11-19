@@ -48,6 +48,26 @@ FOREIGN KEY (PASSENGER_ID) REFERENCES passenger(ID) ON DELETE CASCADE,
 FOREIGN KEY (FLIGHT_ID) REFERENCES flight(ID)
 );
 
+CREATE TABLE role(
+ID INT NOT NULL AUTO_INCREMENT,
+NAME VARCHAR(20),
+PRIMARY KEY (ID)
+);
+
+CREATE TABLE user_role(
+user_id int,
+role_id int,
+FOREIGN KEY (user_id) REFERENCES user(id),
+FOREIGN KEY (role_id) REFERENCES role(id)
+);
+
+insert into role values(1,'ADMIN');
+insert into role values(2,'USER');
+insert into user_role values(2,2);
+
+select * from user_role;
+select * from role;
+
 
 
 SELECT * FROM user;
