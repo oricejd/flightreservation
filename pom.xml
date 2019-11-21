@@ -12,6 +12,8 @@
 	<groupId>com.ap.learnspringboot.flightreservation</groupId>
 	<artifactId>flightreservation</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	
 	<name>flightreservation</name>
 	<description>Flight Reservation App</description>
 
