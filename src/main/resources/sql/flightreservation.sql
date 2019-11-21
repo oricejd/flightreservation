@@ -8,7 +8,7 @@ ID INT NOT NULL AUTO_INCREMENT,
 FIRST_NAME VARCHAR(20),
 LAST_NAME VARCHAR(20),
 EMAIL VARCHAR(20),
-PASSWORD VARCHAR(20),
+PASSWORD VARCHAR(100),
 PRIMARY KEY (ID),
 UNIQUE KEY (EMAIL)
 );
@@ -48,7 +48,30 @@ FOREIGN KEY (PASSENGER_ID) REFERENCES passenger(ID) ON DELETE CASCADE,
 FOREIGN KEY (FLIGHT_ID) REFERENCES flight(ID)
 );
 
+CREATE TABLE role(
+ID INT NOT NULL AUTO_INCREMENT,
+NAME VARCHAR(20),
+PRIMARY KEY (ID)
+);
 
+CREATE TABLE user_role(
+user_id int,
+role_id int,
+FOREIGN KEY (user_id) REFERENCES user(id),
+FOREIGN KEY (role_id) REFERENCES role(id)
+);
+
+insert into role values(1,'ADMIN');
+-- insert into role values(2,'USER');
+insert into user_role values(1,1);
+
+select * from user_role;
+select * from role;
+
+-- delete from user_role where user_id=1;
+-- delete from role where id=2;
+
+-- DELETE FROM user;
 
 SELECT * FROM user;
 
@@ -70,12 +93,14 @@ insert into flight values(6,'VA6','Virgin Airlines','BOS','NYC',STR_TO_DATE('02-
 insert into flight values(7,'VA7','Virgin Airlines','NYC','BOS',STR_TO_DATE('02-09-2018','%m-%d-%Y'),'2018-02-09 01:34:05');
 insert into flight values(8,'VA8','Virgin Airlines','BOS','NYC',STR_TO_DATE('02-10-2018','%m-%d-%Y'),'2018-02-11 09:24:30');
 
-delete from reservation where id=2;
-delete from passenger where id=2;
+-- delete from reservation where id=2;
+-- delete from passenger where id=2;
 
 -- DROP TABLE user;
 -- DROP TABLE passenger;
 -- DROP TABLE flight;
 -- DROP TABLE reservation;
 -- DROP DATABASE RESERVATION;
+
+-- DROP TABLE user_role;
 
