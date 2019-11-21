@@ -28,7 +28,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configure(HttpSecurity http) throws Exception {
 		// configure authentication and authorization
 		http.authorizeRequests()
-				.antMatchers("/showReg", "/", "/index.html", "/registerUser", "/login", "/showLogin", "/login/*")
+				.antMatchers("/showReg", "/", "/index.html","/reqisterUser", "/login", "/showLogin", "/login/*",
+						"/reservations/*")
 				.permitAll().antMatchers("/admin/*").hasAnyAuthority("ADMIN").anyRequest().authenticated().and().csrf()
 				.disable();
 	}
